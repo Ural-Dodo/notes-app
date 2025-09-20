@@ -12,5 +12,13 @@ document.getElementById('add-note-btn').addEventListener('click', function(){
        noteDiv.textContent = noteInput.value;
 
        notesContainer.appendChild(noteDiv);
-       noteInput.value = ''; 
+       noteInput.value = '';
+    const btn = document.createElement('buttton');
+        btn.classList.add('delete-btn');
+        btn.textContent = 'Удалить';
+
+        noteDiv.appendChild(btn)
+    btn.addEventListener('click', function(){
+        notesContainer.removeChild(noteDiv);
+    });
 });
